@@ -20,17 +20,30 @@ class SocialMediaAvatar extends StatelessWidget {
           InkWell(
         child: CircleAvatar(
           backgroundImage: AssetImage(
-            'assets/$path',
+            'assets/${path}.png',
           ),
           radius: 40,
           backgroundColor: Colors.white,
         ),
         onTap: () {
           // launchUrl(Uri.parse(path_links),mode: LaunchMode.externalApplication);
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) =>  Start(url: Uri.parse(path_links),)),
-          );
+          showModalBottomSheet(
+              context: context,
+              builder: (context) {
+                return ElevatedButton(
+                  onPressed: () {
+                    launchUrl(Uri.parse(path_links), mode: LaunchMode.externalApplication);
+                  },
+                  child: Text(
+                    style: TextStyle(fontSize: 20, color: Colors.yellow),
+                    'Go To $path',
+                  ),
+                  style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStatePropertyAll(Colors.transparent),
+                  ),
+                );
+              });
         },
       ),
     );

@@ -7,12 +7,12 @@ import 'package:url_launcher/url_launcher.dart';
 class FristPage extends StatelessWidget {
   FristPage({super.key});
   Map<String, String> pathses = {
-    'whatsapp.png': 'https://wa.me/+201000927095',
-    'facebook.png': 'https://web.facebook.com/profile.php?id=100029550412774',
-    'youtube.png': 'https://www.youtube.com/@GammalTech',
-    'social.png': 'https://github.com/MohammedEmadSelim',
-    'instagram.png': 'https://www.instagram.com/mohammedemad586/',
-    'linkedin.png': 'https://www.linkedin.com/in/mohammed-selim-523239215/',
+    'whatsapp': 'https://wa.me/+201000927095',
+    'facebook': 'https://web.facebook.com/profile.php?id=100029550412774',
+    'youtube': 'https://www.youtube.com/@GammalTech',
+    'social': 'https://github.com/MohammedEmadSelim',
+    'instagram': 'https://www.instagram.com/mohammedemad586/',
+    'linkedin': 'https://www.linkedin.com/in/mohammed-selim-523239215/',
   };
 
   @override

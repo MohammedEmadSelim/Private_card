@@ -16,19 +16,7 @@ class Start extends StatelessWidget {
         backgroundColor: Colors.transparent,
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            launchUrl(url, mode: LaunchMode.externalApplication);
-          },
-          child: Text(
-            style: TextStyle(fontSize: 40, color: Colors.yellow),
-            'Go To Social',
-          ),
-          style: ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.transparent),
-          ),
         ),
-      ),
-    );
+      );
   }
 }
