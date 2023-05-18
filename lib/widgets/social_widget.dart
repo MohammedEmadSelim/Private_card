@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/start.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SocialMediaAvatar extends StatelessWidget {
@@ -17,17 +18,21 @@ class SocialMediaAvatar extends StatelessWidget {
       child:
           // ignore: unnecessary_string_interpolations
           InkWell(
-            child: CircleAvatar(
-                  backgroundImage: AssetImage(
-                   'assets/$path',
-                  ),
-                  radius: 40,
-                  backgroundColor: Colors.white,
-                ),
-                onTap: () {
-                  launchUrl(Uri.parse(path_links),mode: LaunchMode.externalApplication);
-                },
+        child: CircleAvatar(
+          backgroundImage: AssetImage(
+            'assets/$path',
           ),
+          radius: 40,
+          backgroundColor: Colors.white,
+        ),
+        onTap: () {
+          // launchUrl(Uri.parse(path_links),mode: LaunchMode.externalApplication);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) =>  Start(url: Uri.parse(path_links),)),
+          );
+        },
+      ),
     );
   }
 }
