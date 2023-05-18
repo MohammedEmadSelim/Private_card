@@ -1,8 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/widgets/grid_view_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import 'widgets/social_widget.dart';
+
 
 class FristPage extends StatelessWidget {
   FristPage({super.key});
@@ -81,59 +81,12 @@ class FristPage extends StatelessWidget {
                   ),
                 ],
               ),
-              GridView.builder(
-                itemCount: pathses.length,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3),
-                itemBuilder: (
-                  context,
-                  index,
-                ) {
-                  return SocialMediaAvatar(
-                    path: pathses.keys.toList()[index],
-                    path_links: pathses.values.toList()[index],
-                  );
-                },
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                padding: EdgeInsets.all(20),
-              )
-
-              /*
-                        two row in column to draw #           --|
-                                                  #             |
-                                                  #             |    <== column
-                                row1            # # #           |
-                                row2            # # #         --|
-                         */
-              /* <======= block of coode
-                      /======================
-                      vvvvvvvvvvvvvvvvvvvvvvv
-                        SizedBox(height: 20,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            SocialMediaAvatar( path: 'whatsapp.png',),
-                            SocialMediaAvatar( path: 'facebook.png',),
-                            SocialMediaAvatar( path: 'youtube.png',),
-                            
-                          ],
-                        ),
-                        SizedBox(height: 30,),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            SocialMediaAvatar( path: 'social.png',),
-                            SocialMediaAvatar( path: 'linkedin.png',),
-                            SocialMediaAvatar( path: 'instagram.png',),
-                          
-                          ],
-                        )
-                        */
-            ],
+              GridViewWidget(pathses: pathses)
+              ],
           ),
         ),
       ),
     );
   }
 }
+
