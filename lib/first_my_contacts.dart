@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_app/widgets/grid_view_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
-
 class FristPage extends StatelessWidget {
   FristPage({super.key});
   Map<String, String> pathses = {
@@ -18,6 +16,23 @@ class FristPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.home),
+          onPressed: () {},
+        ),
+        title: Text('My Contact'),
+        backgroundColor: Colors.transparent,
+        actions: [
+          Padding(
+            padding: EdgeInsets.only(right: 8),
+            child: IconButton(
+              icon: Icon(Icons.search),
+              onPressed: () {},
+            ),
+          )
+        ],
+      ),
       backgroundColor: Color.fromARGB(255, 0, 128, 128),
       body: SizedBox(
         width: double.infinity,
@@ -82,11 +97,10 @@ class FristPage extends StatelessWidget {
                 ],
               ),
               GridViewWidget(pathses: pathses)
-              ],
+            ],
           ),
         ),
       ),
     );
   }
 }
-

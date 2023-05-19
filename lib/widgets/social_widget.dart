@@ -27,7 +27,7 @@ class SocialMediaAvatar extends StatelessWidget {
         ),
         onTap: () {
           // launchUrl(Uri.parse(path_links),mode: LaunchMode.externalApplication);
-          showModalBottomSheet(
+          showModalBottomSheet(backgroundColor: Colors.yellow,
               context: context,
               builder: (context) {
                 return ElevatedButton(
@@ -35,12 +35,12 @@ class SocialMediaAvatar extends StatelessWidget {
                     launchUrl(Uri.parse(path_links), mode: LaunchMode.externalApplication);
                   },
                   child: Text(
-                    style: TextStyle(fontSize: 20, color: Colors.yellow),
+                    style: TextStyle(fontSize: 20, color: Colors.black),
                     'Go To $path',
                   ),
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStatePropertyAll(Colors.transparent),
+                        MaterialStatePropertyAll(Colors.yellow),
                   ),
                 );
               });
